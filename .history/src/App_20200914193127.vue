@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <TopNav />
+    <TopHeader />
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/stockHistory">Stock History</router-link> |
@@ -13,36 +13,20 @@
 
 <script>
 import M from 'materialize-css';
-import TopNav from '@/components/TopNav.vue'
+import TopHeader from '@/components/HelloWorld.vue'
 
 export default {
   mounted() {
     M.AutoInit();
   },
   components: {
-    TopNav
+    HelloWorld
   }
 }
 </script>
 
 <style lang="scss">
-
-  // $primary-color: color("materialize-red", "lighten-2") !default;
-  // $primary-color-light: false !default;
-  // $primary-color-dark: false !default;
-  // @if not $primary-color-light {
-  //   $primary-color-light: lighten($primary-color, 15%);
-  // }
-  // @if not $primary-color-dark {
-  //   $primary-color-dark: darken($primary-color, 15%);
-  // }
-  // $secondary-color: color("teal", "lighten-1") !default;
-  // $success-color: color("green", "base") !default;
-  // $error-color: color("red", "base") !default;
-  // $link-color: color("light-blue", "darken-1") !default;
-
 #app {
-  
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

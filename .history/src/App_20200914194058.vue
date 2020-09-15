@@ -26,23 +26,22 @@ export default {
 </script>
 
 <style lang="scss">
-
-  // $primary-color: color("materialize-red", "lighten-2") !default;
-  // $primary-color-light: false !default;
-  // $primary-color-dark: false !default;
-  // @if not $primary-color-light {
-  //   $primary-color-light: lighten($primary-color, 15%);
-  // }
-  // @if not $primary-color-dark {
-  //   $primary-color-dark: darken($primary-color, 15%);
-  // }
-  // $secondary-color: color("teal", "lighten-1") !default;
-  // $success-color: color("green", "base") !default;
-  // $error-color: color("red", "base") !default;
-  // $link-color: color("light-blue", "darken-1") !default;
-
 #app {
-  
+  $pms-2756-c: color("#1d2675");
+  $primary-color: $pms-2756-c !default;
+  $primary-color-light: false !default;
+  $primary-color-dark: false !default;
+  @if not $primary-color-light {
+    $primary-color-light: lighten($primary-color, 15%);
+  }
+  @if not $primary-color-dark {
+    $primary-color-dark: darken($primary-color, 15%);
+  }
+  $secondary-color: color("#919095", "lighten-1") !default;
+  $success-color: color("green", "base") !default;
+  $error-color: color("red", "base") !default;
+  $link-color: color("light-blue", "darken-1") !default;
+
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

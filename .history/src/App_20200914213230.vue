@@ -26,6 +26,7 @@ export default {
 </script>
 
 <style lang="scss">
+  @import url('materialize-css/dist/css/materialize.css');
 
   // $primary-color: color("materialize-red", "lighten-2") !default;
   // $primary-color-light: false !default;
