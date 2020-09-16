@@ -12,15 +12,15 @@
 
       <p class="row social-links">
         <a href="https://www.linkedin.com/in/rudrapandya/" target="_blank">
-          <img class="social-icons" src="https://res.cloudinary.com/pandyarudra/image/upload/v1600182759/3-2-linkedin-download-png-thumb.png"> LinkedIn
+          <img alt="linkedin-picture" class="social-icons" src="https://res.cloudinary.com/pandyarudra/image/upload/v1600182759/3-2-linkedin-download-png-thumb.png"> LinkedIn
         </a> 
         <span>&nbsp;|&nbsp;</span>
         <a href="https://github.com/pandyarudra" target="_blank">
-          <img class="social-icons" src="https://res.cloudinary.com/pandyarudra/image/upload/v1600182873/github.png"> GitHub
+          <img alt="github-picture" class="social-icons" src="https://res.cloudinary.com/pandyarudra/image/upload/v1600182873/github.png"> GitHub
         </a> 
         <span>&nbsp;|&nbsp;</span>
         <a href="mailto:pandyarudra9@gmail.com">
-            <img class="social-icons" src="https://res.cloudinary.com/pandyarudra/image/upload/v1600182968/gmail.jpg"> Gmail
+          <img alt="gmail-picture" class="social-icons" src="https://res.cloudinary.com/pandyarudra/image/upload/v1600182968/gmail.jpg"> Gmail
          </a>
       </p>
       
