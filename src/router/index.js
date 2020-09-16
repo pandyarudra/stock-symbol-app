@@ -1,26 +1,58 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
+import Vue from "vue";
+import VueRouter from "vue-router";
+import LoginComponent from "../views/login.vue";
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
+
+function guardMyroute(to, from, next) {
+  var isAuthenticated = false;
+  //this is just an example. You will have to find a better or
+  // centralised way to handle you localstorage data handling
+  if (localStorage.getItem("authenticated") === "true") isAuthenticated = true;
+  else isAuthenticated = false;
+  if (isAuthenticated) {
+    next(); // allow to enter route
+  } else {
+    next("/login"); // go to '/login';
+  }
+}
 
 const routes = [
   {
-    path: '/',
-    name: 'WelcomePage',
-    component: () => import(/* webpackChunkName: "about" */ '../views/WelcomePage.vue')
+    path: "/",
+    redirect: {
+      name: "welcome",
+    },
+    beforeEnter : guardMyroute,
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
-]
+    path: "/login",
+    name: "login",
+    component: LoginComponent,
+  },
+  {
+    path: "/welcome",
+    name: "welcome",
+    component: () => import("../views/WelcomePage.vue"),
+    beforeEnter : guardMyroute,
+
+  },
+  {
+    path: "/author",
+    name: "author",
+    component: () => import("../views/Author.vue"),
+    beforeEnter : guardMyroute,
+  },
+  {
+    path: "/stockHistory",
+    name: "stockHistory",
+    component: () => import("../views/StockHistory.vue"),
+    beforeEnter : guardMyroute,
+  },
+];
 
 const router = new VueRouter({
-  routes
-})
+  routes,
+});
 
-export default router
+export default router;

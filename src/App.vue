@@ -1,45 +1,58 @@
 <template>
   <div id="app">
-    <TopNav />
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/stockHistory">Stock History</router-link> |
-      <router-link to="/about">Author</router-link>
-    </div>
-    <router-view/>
+    <TopNav logout="logout" authenticated="authenticated" ref="topNav" />
+    <router-view @authenticated="setAuthenticated" class="router-view"/>
+    <!-- <Footer /> TODO: Couldn't finish it time so left if for later. -->
   </div>
 </template>
 
 
 <script>
 import M from 'materialize-css';
-import TopNav from '@/components/TopNav.vue'
+import TopNav from '@/components/top-nav/TopNav.vue';
+// import Footer from '@/components/footer/Footer.vue';
 
 export default {
   mounted() {
     M.AutoInit();
   },
+  methods: {
+    setAuthenticated(status) {
+      this.authenticated = status;
+      this.$emit('authenticated', status);
+      localStorage.setItem('authenticated', status);
+      this.$refs.topNav.loginSuccessful(status);
+
+      // Just for Demo Purposes, it will log you out after every two hours
+      setTimeout(() => {
+        localStorage.removeItem('authenticated');
+      }, 7200000)
+    }
+  },
   components: {
-    TopNav
+    TopNav,
+    // Footer
+  },
+  data() {
+    return {
+      authenticated: localStorage.getItem('authenticated'),
+      mockAccount: {
+        username: "Admin",
+        password: "password"
+      },
+    }
+  },
+  created() {
+    if (!this.authenticated) {
+      this.$router.replace({ name: 'login' });
+    }
   }
 }
 </script>
 
 <style lang="scss">
 
-  // $primary-color: color("materialize-red", "lighten-2") !default;
-  // $primary-color-light: false !default;
-  // $primary-color-dark: false !default;
-  // @if not $primary-color-light {
-  //   $primary-color-light: lighten($primary-color, 15%);
-  // }
-  // @if not $primary-color-dark {
-  //   $primary-color-dark: darken($primary-color, 15%);
-  // }
-  // $secondary-color: color("teal", "lighten-1") !default;
-  // $success-color: color("green", "base") !default;
-  // $error-color: color("red", "base") !default;
-  // $link-color: color("light-blue", "darken-1") !default;
+ @import "assets/styles.scss";
 
 #app {
   
@@ -47,7 +60,6 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
 }
 
 #nav {
@@ -62,4 +74,8 @@ export default {
     }
   }
 }
+
+// .router-view {
+//   height: calc(100vh - 16.4vh);
+// }
 </style>

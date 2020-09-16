@@ -1,0 +1,7 @@
+@import "./materialize-src/sass/components/color-variables";
+$primary-color: color("mcap-palette", "dark-blue") !default;
+$secondary-color: color("mcap-palette", "dark-blue") !default;
+$link-color: color("shades", "white") !default;
+
+@import "./materialize-src/sass/materialize.scss";
+

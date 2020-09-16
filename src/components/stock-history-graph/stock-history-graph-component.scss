@@ -1,0 +1,20 @@
+.error-icon {
+    font-size: 30px;
+    color: red;
+}
+
+.preloader-wrapper {
+    width: 100px !important;
+    height: 100px !important;
+
+    .circle-clipper.left .circle {
+        border-width: 6px !important;
+    }
+}
+
+.charts-container {
+    .card-panel {
+        width: 100% !important;
+        text-align: center;
+    }
+}
