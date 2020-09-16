@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import StockHistoryGraph from '@/components/stock-history-graph/StockHistoryGraph.vue';
+import StockHistoryGraph from '@/components/stock-history-graph/stock-history-graph-component.vue';
 import Vue from 'vue';
 
 export default {

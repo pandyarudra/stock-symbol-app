@@ -7,7 +7,9 @@
 
     <div class="col s12">
       <h3>Rudra Pandya - Full Stack Developer</h3>
+
       <p>This app was build using Vue and Materialize CSS</p>
+
       <p class="row social-links">
         <a href="https://www.linkedin.com/in/rudrapandya/" target="_blank">
           <img class="social-icons" src="https://res.cloudinary.com/pandyarudra/image/upload/v1600182759/3-2-linkedin-download-png-thumb.png"> LinkedIn
@@ -21,6 +23,7 @@
             <img class="social-icons" src="https://res.cloudinary.com/pandyarudra/image/upload/v1600182968/gmail.jpg"> Gmail
          </a>
       </p>
+      
     </div>
 
   </div>

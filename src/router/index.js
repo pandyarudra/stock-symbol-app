@@ -1,15 +1,17 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import LoginComponent from "../views/login.vue";
 
 Vue.use(VueRouter);
 
-function guardMyroute(to, from, next) {
+function guardRoute(to, from, next) {
   var isAuthenticated = false;
-  //this is just an example. You will have to find a better or
-  // centralised way to handle you localstorage data handling
-  if (localStorage.getItem("authenticated") === "true") isAuthenticated = true;
-  else isAuthenticated = false;
+  if (localStorage.getItem("authenticated") === "true") {
+    isAuthenticated = true;
+  }
+  else {
+    isAuthenticated = false;
+  }
+
   if (isAuthenticated) {
     next(); // allow to enter route
   } else {
@@ -23,31 +25,30 @@ const routes = [
     redirect: {
       name: "welcome",
     },
-    beforeEnter : guardMyroute,
+    beforeEnter: guardRoute,
   },
   {
     path: "/login",
     name: "login",
-    component: LoginComponent,
+    component: () => import("../views/Login.vue"),
   },
   {
     path: "/welcome",
     name: "welcome",
     component: () => import("../views/WelcomePage.vue"),
-    beforeEnter : guardMyroute,
-
+    beforeEnter: guardRoute,
   },
   {
     path: "/author",
     name: "author",
     component: () => import("../views/Author.vue"),
-    beforeEnter : guardMyroute,
+    beforeEnter: guardRoute,
   },
   {
     path: "/stockHistory",
     name: "stockHistory",
     component: () => import("../views/StockHistory.vue"),
-    beforeEnter : guardMyroute,
+    beforeEnter: guardRoute,
   },
 ];
 

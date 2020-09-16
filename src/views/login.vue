@@ -6,7 +6,7 @@
         <input class="col s12 m6 offset-m3 center" type="text" name="username" v-model="input.username" placeholder="Username" />
         <input class="col s12 m6 offset-m3 center" type="password" name="password" v-model="input.password" placeholder="Password" />
         <div class="col s12 m6 offset-m3 login-button"><button class="btn btn-large" v-on:click="login()">Login</button></div>
-        <div class="col s12" v-if="errorMessage" style="color: red;padding-top: 2%;">{{ errorMessage }}</div>
+        <div class="col s12 error-message" v-if="errorMessage" style="color: red;padding-top: 2%;">{{ errorMessage }}</div>
 
       </div>
   </div>
@@ -37,7 +37,7 @@ export default {
           this.errorMessage = "The username and / or password is incorrect";
         }
       } else {
-        this.errorMessage = "A username and password must be present";
+        this.errorMessage = "Username and Password both are required fields.";
       }
     },
     mounted() {
@@ -50,15 +50,23 @@ export default {
 </script>
 
 <style lang="scss">
-    .login-button {
-        padding-top: 2% !important;
-    }
 
-    div.container {
-        padding-top: 5%;
-    }
+@import '../assets/styles.scss';
 
-    div.card-panel {
-        padding-bottom: 5% !important;
-    }
+.login-button {
+  padding-top: 2% !important;
+}
+
+div.container {
+  padding-top: 5%;
+}
+
+div.card-panel {
+  padding-bottom: 5% !important;
+}
+
+.error-message {
+  color: $error-color
+}
+
 </style>

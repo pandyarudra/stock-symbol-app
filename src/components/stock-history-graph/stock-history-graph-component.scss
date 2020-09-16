@@ -1,6 +1,8 @@
+@import '../../assets/styles.scss';
+
 .error-icon {
     font-size: 30px;
-    color: red;
+    color: $error-color;
 }
 
 .preloader-wrapper {

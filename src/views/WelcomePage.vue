@@ -1,5 +1,5 @@
 <template>
-<div class="row center main-container">
+  <div class="row center main-container">
     <h2 class="col s10 offset-s1 l12">Welcome to MCAP's Stock Trading Tool
     </h2>
 
@@ -18,20 +18,16 @@
       </router-link>
     </div>
     
-</div>
+  </div>
 </template> 
 
 
 <script>
 export default {
   name: 'WelcomePage',
-  props: {
-    msg: String
-  }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
   div.main-container {
       padding-top: 12%;

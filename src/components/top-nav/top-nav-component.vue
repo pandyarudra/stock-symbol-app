@@ -1,12 +1,11 @@
 <template>
-     <nav>
+  <nav>
     <div class="nav-wrapper">
       <div class="left app-title">
         <a v-show="isAuthenticated" href="#" class="sidenav-trigger col s3" data-target="mobile-nav">
           <i class="material-icons">menu</i>
         </a>
         <a href="#" class="brand-logo col s9">
-          <!-- <img class="stocks-logo responsive-img" src="https://res.cloudinary.com/pandyarudra/image/upload/v1600186436/favicon-svg.svg"> -->
            <router-link to="/welcome"> MCAP Stock Trading </router-link>
         </a>
       </div>
@@ -15,14 +14,14 @@
         <li><router-link to="/">Home</router-link></li>
         <li><router-link to="/stockHistory">Stock History</router-link></li>
         <li><router-link to="/author">Author</router-link></li>
-        <li><a v-on:click="logoutUser">Logout</a></li>
+        <li><a v-on:click="logoutUser">Admin, Logout</a></li>
       </ul>
 
       <ul v-show="isAuthenticated" id="mobile-nav" class="sidenav">
         <li><router-link to="/">Home</router-link></li>
         <li><router-link to="/stockHistory">Stock History</router-link></li>
         <li><router-link to="/author">Author</router-link></li>
-        <li><a  v-on:click="logoutUser">Logout</a></li>
+        <li><a  v-on:click="logoutUser">Admin, Logout</a></li>
       </ul>
 
     </div>

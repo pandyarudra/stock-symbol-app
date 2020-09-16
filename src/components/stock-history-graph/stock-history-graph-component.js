@@ -37,7 +37,7 @@ export default {
   methods: {
     // Fetch the Data on symbol input
     getSymbolData(symbol) {
-      const apiKey = 'KXN1MKTJP3T13SBC';
+      const apiKey = "KXN1MKTJP3T13SBC";
       this.errorMessage = null;
       this.stockData = null;
       this.loading = true;
@@ -53,7 +53,6 @@ export default {
             this.errorMessage =
               "There is an issue with the API Key, please change it before proceeding.";
           } else {
-
             const graphData = _.map(
               response.data["Time Series (Daily)"],
               (value, key) => {
@@ -71,8 +70,8 @@ export default {
               var lastKey = _.last(openValues);
               if (lastKey) {
                 var totalDays = this.getDaysArray(
-                    new Date(row.date),
-                    lastKey[0],
+                  new Date(row.date),
+                  lastKey[0]
                 );
 
                 if (totalDays && totalDays.length > 1) {
@@ -144,19 +143,19 @@ export default {
         });
     },
     getDaysArray: function(startDate, endDate, addFn, interval) {
-        addFn = addFn || Date.prototype.addDays;
-        interval = interval || 1;
+      addFn = addFn || Date.prototype.addDays;
+      interval = interval || 1;
 
-        var retVal = [];
-        var current = new Date(startDate);
+      var retVal = [];
+      var current = new Date(startDate);
 
-        while (current <= endDate) {
-          retVal.push(new Date(current));
-          current = addFn.call(current, interval);
-        }
-
-        return retVal;
+      while (current <= endDate) {
+        retVal.push(new Date(current));
+        current = addFn.call(current, interval);
       }
+
+      return retVal;
+    },
   },
   created() {
     this.getSymbolData(this.stockSymbol);

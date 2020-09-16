@@ -2,14 +2,15 @@
   <div id="app">
     <TopNav logout="logout" authenticated="authenticated" ref="topNav" />
     <router-view @authenticated="setAuthenticated" class="router-view"/>
-    <!-- <Footer /> TODO: Couldn't finish it time so left if for later. -->
+    <!-- <Footer /> TODO: Couldn't finish it in time so left if for later. -->
   </div>
 </template>
 
 
 <script>
 import M from 'materialize-css';
-import TopNav from '@/components/top-nav/TopNav.vue';
+import TopNav from '@/components/top-nav/top-nav-component.vue';
+// TODO: Will finish this addon in future
 // import Footer from '@/components/footer/Footer.vue';
 
 export default {
@@ -62,20 +63,4 @@ export default {
   text-align: center;
 }
 
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
-
-// .router-view {
-//   height: calc(100vh - 16.4vh);
-// }
 </style>
